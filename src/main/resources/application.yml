@@ -1,8 +1,10 @@
 spring:
+  config:
+    import: optional:.env[.properties]
   datasource:
-    url: jdbc:mysql://localhost:3306/nbcam
-    username: root
-    password: 12345678
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
